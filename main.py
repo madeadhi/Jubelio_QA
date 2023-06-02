@@ -17,7 +17,6 @@ password = 'Jubelio123!'
 product_name = 'Tws 198'
 stock_product = '2'
 
-# Login
 input_username = wait.until(lambda drv: drv.find_element(By.NAME, 'email'))
 input_username.send_keys(f'{username}')
 input_password = wait.until(lambda drv: drv.find_element(By.NAME, 'password'))
@@ -25,22 +24,20 @@ input_password.send_keys(f'{password}')
 
 button_login = wait.until(lambda drv: drv.find_element(By.XPATH, "//button[normalize-space()='Masuk']"))
 button_login.click()
-print("Login Success")
-# Login
 
-# Sidebar
+# time.sleep(2)
+# text_dash = driver.find_element(By.XPATH, "//h1[contains(text(),'Selamat Datang')]")
+# print(text_dash.text)
+print("Login Success")
+
 product_menu = wait.until(lambda drv: drv.find_element(By.XPATH, "//span[normalize-space()='Barang']"))
 product_menu.click()
 stock_menu = wait.until(lambda drv: drv.find_element(By.XPATH, "//span[normalize-space()='Persediaan']"))
 stock_menu.click()
-# Sidebar
 
-# Button Peyesuaian Persediaan
 stock_button = wait.until(lambda drv: drv.find_element(By.XPATH, "//button[normalize-space()='Penyesuaian Persediaan']"))
 stock_button.click()
-# Button Peyesuaian Persediaan
 
-# Update Stock
 # product_button = wait.until(lambda drv: drv.find_element(By.XPATH, "//span[normalize-space()='Harap pilih']"))
 product_button = wait.until(lambda drv: drv.find_element(By.XPATH, "//span[@class='text-muted']"))
 product_button.click()
@@ -65,7 +62,6 @@ actionStock.perform()
 
 stock_update = wait.until(lambda drv: drv.find_element(By.XPATH, "//input[@class=' editor-main']"))
 stock_update.send_keys(f'{stock_product} {Keys.ENTER}')
-# Update Stock
 
 save_button = wait.until(lambda drv: drv.find_element(By.XPATH, "//button[normalize-space()='Simpan']"))
 save_button.click()
